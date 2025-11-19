@@ -1,0 +1,16 @@
+<div class="container mt-2 mb-4 p-4">
+  <div class="mb-3 pt-3 text-center bg-light border rounded">
+    <h1>List of restaurants</h1>
+    <%= link_to "Add new Restaurant", new_restaurant_path, :class=>"btn btn-primary m-3" %>
+  </div>
+
+  <div class="mb-3 p-3 bg-light border rounded">
+    <% @restaurants.each do |restaurant| %>
+      <div class="list-group">
+        <a href="restaurants/<%= restaurant.id %>" class="list-group-item list-group-item-action" aria-current="true">
+          <%= restaurant.name %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

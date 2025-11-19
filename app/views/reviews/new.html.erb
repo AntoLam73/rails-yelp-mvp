@@ -1,0 +1,13 @@
+<div class="mx-3">
+  <%= link_to "Back to the restaurant", restaurant_path(@restaurant), class: "btn btn-secondary btn-sm mt-3" %>
+</div>
+
+<div class="container mt-4 mb-4 p-4 bg-light border rounded">
+  <h1>New review for <%= @restaurant.name %>:</h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
